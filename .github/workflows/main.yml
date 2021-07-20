@@ -19,7 +19,7 @@ jobs:
       - name: Genereate code for squzy-storage protofile
         uses: PxyUp/protoc-actions@v3.0.0
         with:
-          path: -I./ --go_opt=paths=source_relative --go_opt=Mproto/hello-world.proto=github.com/tarsidi-danesh/grpc-intro-go --go_out=plugins=grpc:.
+          path: -I./ --go_opt=paths=source_relative --go_opt=Mproto/hello-world.proto=github.com/tarsidi-danesh/grpc-intro-go --go_out=plugins=grpc:. proto/hello-world.proto
       - name: Commit & Push changes
         uses: EndBug/add-and-commit@v7
         with:
