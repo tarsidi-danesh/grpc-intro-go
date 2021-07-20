@@ -36,5 +36,5 @@ jobs:
           author_name: Tarsidi
           author_email: tarsidi.danesh@tiket.com
           message: 'Generate code from proto file'
-          tag: ${{ steps.tag_version.outputs.new_tag }}
+          tag: '${{ steps.tag_version.outputs.new_tag }} --force'
       
