@@ -37,7 +37,7 @@ jobs:
         with:
           github_token: ${{ secrets.REPO_ACCESS_TOKEN }}
       - name: Run GoReleaser
-        uses: goreleaser/goreleaser-action@master
+        uses: goreleaser/goreleaser-action@v2
         with:
           distribution: goreleaser
           version: ${{ steps.tag_version.outputs.new_tag }}
