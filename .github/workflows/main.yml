@@ -16,7 +16,7 @@ jobs:
         run: |
           git config --global user.name "Tarsidi"
           git config --global user.email "tarsidi.danesh@tiket.com"
-      - name: Genereate code for squzy-storage protofile
+      - name: Genereate code for protofile
         uses: PxyUp/protoc-actions@v3.0.0
         with:
           path: -I./ --go_opt=paths=source_relative --go_opt=Mproto/hello-world.proto=github.com/tarsidi-danesh/grpc-intro-go --go_out=plugins=grpc:. proto/hello-world.proto
@@ -31,7 +31,7 @@ jobs:
         with:
           go-version: 1.16
       - name: Run GoReleaser
-        uses: goreleaser/goreleaser-action@v2
+        uses: goreleaser/goreleaser-action@master
         with:
           distribution: goreleaser
           version: latest
