@@ -25,11 +25,12 @@ jobs:
         uses: PxyUp/protoc-actions@v3.0.0
         with:
           path: -I./ --go_opt=paths=source_relative --go_opt=Mproto/hello-world.proto=github.com/tarsidi-danesh/grpc-intro-go/grpc/proto --go_out=plugins=grpc:./grpc proto/hello-world.proto
-      - name: Bump version and push tag
+      - name: Create Tag
         id: tag_version
         uses: mathieudutour/github-tag-action@v5.5
         with:
           github_token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          custom_tag: ${{ github.event.client_payload.version }}
       - name: Commit & Push changes
         uses: EndBug/add-and-commit@v7
         with:
